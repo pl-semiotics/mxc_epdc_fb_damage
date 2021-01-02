@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "mxc_epdc_fb_damage";
-  version = "0.0.1";
+  version = "0.0.2";
 
   src = lib.cleanSource ./.;
 
@@ -21,7 +21,10 @@ stdenv.mkDerivation rec {
     "CROSS_COMPILE=${stdenv.cc.targetPrefix}"
   ];
 
-  NIX_CFLAGS_COMPILE_FLOAT_ABI = "-mfloat-abi=soft";
+  NIX_CFLAGS_COMPILE_MARCH = " ";
+  NIX_CFLAGS_COMPILE_MCPU = " ";
+  NIX_CFLAGS_COMPILE_MFPU = " ";
+  NIX_CFLAGS_COMPILE_MFLOAT_ABI = " ";
 
   outputs = [ "out" "dev" ];
 
