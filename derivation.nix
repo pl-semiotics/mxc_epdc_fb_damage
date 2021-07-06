@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
     # To be passed through to the kernel's makefile. See manual-config.nix
     "CC=${stdenv.cc}/bin/${stdenv.cc.targetPrefix}cc"
     "HOSTCC=${buildPackages.stdenv.cc}/bin/${buildPackages.stdenv.cc.targetPrefix}cc"
-    "ARCH=${stdenv.hostPlatform.platform.kernelArch}"
+    "ARCH=${stdenv.hostPlatform.linuxArch}"
     "CROSS_COMPILE=${stdenv.cc.targetPrefix}"
   ];
 
